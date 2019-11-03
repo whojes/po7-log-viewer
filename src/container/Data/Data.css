@@ -1,0 +1,17 @@
+#data-display-area {
+}
+
+#data-display-area .one-line {
+  width: 100vw;
+}
+
+#data-display-area .numbering {
+  width: 3rem;
+  display: table-cell;
+  color: red;
+}
+
+#data-display-area .data-with-number {
+  width: calc(100% - 3rem);
+  display: table-cell;
+}

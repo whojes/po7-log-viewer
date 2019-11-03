@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  pologwebviewer:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 6754:6754
+      - 16754:16754
+    volumes:
+      - /home/whojes/workspace/po-log-viewer:/usr/src/app

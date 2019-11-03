@@ -1,0 +1,32 @@
+#connection-info-modal {
+  font-size: 1rem;
+}
+
+#connection-info-modal p {
+  padding: 0;
+  margin: 5px;
+}
+
+#connection-info-modal .header {
+  vertical-align: center;
+  font-size: 2rem;
+}
+
+#connection-info-modal .unit {
+  margin: 0.3rem;
+  padding: 0.3rem;
+  border-width: 0 0 0 0.2rem;
+  border-style: solid;
+}
+
+#connection-info-modal .po-home-hint {
+  margin-top: 10px;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+
+
+#connection-info-modal .save {
+  float: right;
+}

@@ -1,0 +1,63 @@
+#po-log-app {
+
+}
+
+#po-log-app .header {
+  height: 100px;
+  overflow-x: auto;
+}
+
+#po-log-app .upper-header {
+  height: 30px;
+}
+
+#po-log-app .lower-header {
+  height: 70px;
+}
+
+#po-log-app .dynamic-type-change-button {
+  float: left;
+  margin: 5px;
+}
+
+#po-log-app .file-button {
+  float: left;
+  padding: 5px;
+}
+
+#po-log-app .option-button {
+  float: right;
+  padding: 5px;
+}
+
+#po-log-app .body {
+  background-color: black;
+  color: white;
+  height: calc(100vh - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  left : 0;
+  bottom: 0;
+}
+
+#po-log-app .option-block {
+  float: left;
+  padding: 0 0 0 10px;
+  border: 2px;
+  border-style: solid;
+  padding: 3px;
+  margin: 3px;
+}
+
+#po-log-app p {
+  margin: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

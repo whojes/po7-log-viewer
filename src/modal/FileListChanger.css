@@ -1,0 +1,30 @@
+#file-list-changer-modal {
+
+}
+
+#file-list-changer-modal p {
+  font-size: 1.2rem;
+  margin: 5px;
+  padding: 5px;
+}
+
+#file-list-changer-modal .file-list {
+  margin: 5px;
+  padding: 5px;
+  border: solid;
+  border-width: 2px;
+}
+
+#file-list-changer-modal .exist-file-list {
+  height: 200px;
+}
+
+#file-list-changer-modal .file-list-button {
+  margin: 5px;
+}
+
+#file-list-changer-modal .save {
+  margin: 5px;
+  padding: 5px;
+  float: right;
+}

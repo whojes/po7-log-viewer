@@ -1,0 +1,29 @@
+/* loader */
+#page-loading {
+  background-color:white;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  z-index:99;
+  display: none;
+  opacity:0.6;
+  }
+  #page-loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: calc(50vh - 30px) calc(50vw - 30px);
+  /* margin: auto; */
+  }
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+  }
