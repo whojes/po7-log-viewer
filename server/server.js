@@ -1,5 +1,3 @@
-// import { msgType, status } from "./msgType";
-
 const msgType = require("./msgType").msgType;
 const status = require("./msgType").status;
 
@@ -7,8 +5,6 @@ const CLIENT_PORT = 6754;
 const WEBSOCKER_PROXY_PORT = 16754;
 
 const express = require('express');
-// const cors = require('cors');
-const fs = require('fs');
 const SshClient = require('ssh2').Client;
 
 const WebSocketServer = require("websocket").server;
@@ -16,56 +12,15 @@ const http = require('http');
 
 // webserver
 const web = express();
-web.use( (req, res, next) => {
-    if (req.url == "/") {
-        fs.readFile("./html/index.html", (err, data) => {
-            if(err) {
-                console.error (err.message);
-            } else {
-                res.setHeader('Content-Type', 'text/html; charset=utf-8');
-                res.write(data);
-                res.end();
-            }
-        });
-    } else {
-        fs.exists("./html/" + req.url, (exists) => {
-            if(exists) {
-                fs.readFile("./html/"+req.url, (err, data) => {
-                    if(err) {
-                        res.statusCode = 404;
-                        res.end();
-                    } else {
-                        // res.setHeader('Content-Type', 'text/html; charset=utf-8');
-                        res.write(data);
-                        res.end();
-                    }
-                });
-            } else {
-                fs.readFile("./html/index.html", (err, data) => {
-                    if(err) {
-                        console.error (err.message);
-                    } else {
-                        res.setHeader('Content-Type', 'text/html; charset=utf-8');
-                        res.write(data);
-                        res.end();
-                    }
-                });
-            }
-        })
-    }
+web.use(express.static('html'));
+web.use((req, res, next) => {
+    res.redirect('/');
 });
-
 const webserver = http.createServer(web);
 webserver.listen(CLIENT_PORT);
 
-
 // websocket server
-const server = http.createServer(function(req, res){
-});
-
-server.listen(WEBSOCKER_PROXY_PORT, function(){
-});
-
+const server = http.createServer();
 const wsServer = new WebSocketServer({
     httpServer : server
 });
@@ -80,7 +35,6 @@ wsServer.on('request', function(request){
             return;
         }
         const msg = JSON.parse(message.utf8Data);
-        console.log(msg);
         switch(msg.msgType) {
             case msgType.HANDSHAKE:
                 ssh = new SshClient();
@@ -223,3 +177,5 @@ wsServer.on('request', function(request){
         });
     });
 });
+
+server.listen(WEBSOCKER_PROXY_PORT);
