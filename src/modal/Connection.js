@@ -164,7 +164,7 @@ export default class Connection extends React.Component  {
     let afterConnect;
     let poHomeHint;
 
-    if(this.state.connection.ip === "192.168.9.155") {
+    if(this.state.connection.ip === "192.168.6.240") {
       poHomeHint = [
         "/root/personal_pohome/jaesung_woo/AppCenter/",
         "/root/personal_pohome/junho_kim/AppCenter/",
