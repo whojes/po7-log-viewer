@@ -609,6 +609,12 @@ class App extends React.Component {
               <button onClick={ () => this._applyRegex(false) } > Remove </button>
               <button onClick={ () => window.open(`${whojes.regexHelp}`, "_blank") }> what's regex?</button>
             </div>
+            
+            <div className="option-block" style={{float: "right"}}>
+              <button style={{fontSize:"1.2rem"}} onClick={ () => {
+                alert("더 볼 옵션이 없는데요.")
+              } } > See more Options </button>
+            </div>
           </div>
         </div>
         <div className="body">
